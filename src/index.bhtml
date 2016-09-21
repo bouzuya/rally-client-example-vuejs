@@ -1,10 +1,19 @@
 <!doctype html
 <html
   <head
+    </meta
+      @charset UTF-8
     <title
-      Hello
+      RALLY
+    <link
+      @rel stylesheet
+      @type text/css
+      @href /index.css
   <body
     <h1
-      Hello
+      RALLY
     <p
       Hello
+    <script
+      @type text/javascript
+      @src /index.js
