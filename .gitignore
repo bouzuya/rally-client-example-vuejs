@@ -3,4 +3,5 @@
 .tmp/
 lib/
 node_modules/
+public/
 typings/
