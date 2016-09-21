@@ -21,6 +21,9 @@
   "bugs": {
     "url": "https://github.com/bouzuya/rally-client-example-vuejs/issues"
   },
+  "dependencies": {
+    "rally-client": "0.1.0"
+  },
   "devDependencies": {
     "@types/node": "6.0.39",
     "@types/power-assert": "0.0.28",
