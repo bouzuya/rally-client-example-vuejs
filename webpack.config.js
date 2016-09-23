@@ -29,6 +29,11 @@ module.exports = [
     },
     plugins: [
       new webpack.optimize.UglifyJsPlugin()
-    ]
+    ],
+    resolve: {
+      alias: {
+        vue: 'vue/dist/vue.js'
+      }
+    }
   }
 ];
