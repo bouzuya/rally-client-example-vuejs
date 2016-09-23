@@ -1,4 +1,19 @@
 import * as Vue from 'vue';
+import { create } from 'rally-client';
+import { ensureStampCard } from './ensure-stamp-card';
+import { ensureUser } from './ensure-user';
+
+const showStampCard = (stampRallyId: string): void => {
+  const client = create();
+  ensureUser(client)
+    .then((user) => {
+      console.log(user);
+      return ensureStampCard(client, stampRallyId, user.id);
+    })
+    .then((stampCard) => {
+      console.log(stampCard);
+    });
+};
 
 const main = (): void => {
   type Data = { count: number; };
@@ -14,6 +29,8 @@ const main = (): void => {
     methods: {
       click(this: Data): void {
         this.count += 1;
+        const stampRallyId = 'bouzuya';
+        showStampCard(stampRallyId);
       }
     }
   });
