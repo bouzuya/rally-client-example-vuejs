@@ -10,10 +10,15 @@
       @type text/css
       @href /index.css
   <body
-    <h1
-      RALLY
-    <p
-      Hello
+    <div
+      @id app
+      <h1
+        @class title
+        @v-on:click click
+        {{message}}
+      <p
+        @class description
+        This is unofficial RALLY client.
     <script
       @type text/javascript
       @src /index.js
