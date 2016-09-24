@@ -4,6 +4,5 @@
 lib/
 node_modules/
 public/
-src/templates/*.html
-src/templates/*.ts
+src/views/templates/*.ts
 typings/
