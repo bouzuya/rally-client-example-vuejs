@@ -2,6 +2,7 @@ import * as Vue from 'vue';
 import { create, RallyClient } from 'rally-client';
 import { ensureStampCard, StampCard } from './ensure-stamp-card';
 import { ensureUser } from './ensure-user';
+import { StampRally } from './types/stamp-rally';
 
 interface ApiSpot {
   name: string;
@@ -16,21 +17,6 @@ interface ApiStampRally {
   description: string | null;
   spots: ApiSpot[];
   images: { s640: string; }[];
-}
-
-interface Spot {
-  name: string;
-  tagline: string;
-  description: string;
-  image: string | null;
-}
-
-interface StampRally {
-  name: string;
-  tagline: string;
-  description: string;
-  spots: Spot[];
-  image: string | null;
 }
 
 const getStampRally = (
