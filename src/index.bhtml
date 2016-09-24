@@ -21,6 +21,8 @@
         <p
           @class stamp-card-id
           {{stampCardId}}
+      <my-stamp-rally
+        @v-bind:stamp-rally stampRally
       <p
         @class description
         This is unofficial RALLY client.

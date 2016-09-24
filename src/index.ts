@@ -3,6 +3,7 @@ import { create, RallyClient } from 'rally-client';
 import { ensureStampCard, StampCard } from './ensure-stamp-card';
 import { ensureUser } from './ensure-user';
 import { StampRally } from './types/stamp-rally';
+import { view as StampRallyView } from './views/stamp-rally';
 
 interface ApiSpot {
   name: string;
@@ -71,6 +72,9 @@ const main = (): void => {
   const vue = new Vue({
     el: '#app',
     data,
+    components: {
+      'my-stamp-rally': StampRallyView
+    },
     computed: {
       message(this: AppData): string {
         return `count = ${this.count}`;
