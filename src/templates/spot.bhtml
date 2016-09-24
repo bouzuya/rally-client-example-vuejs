@@ -1,0 +1,17 @@
+<div
+  @class spot
+  <div
+    @class name
+    @v-text spot.name
+  <div
+    @class tagline
+    @v-html spot.tagline
+  <div
+    @class description
+    @v-html spot.description
+  <div
+    @class image
+    </img
+      @width 64
+      @height 64
+      @v-bind:src spot.image

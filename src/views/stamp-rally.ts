@@ -1,6 +1,7 @@
 import { Spot } from '../types/spot';
 import { StampRally } from '../types/stamp-rally';
-import { template } from '../templates/stamp-rally';
+import { template } from '../views/templates/stamp-rally';
+import { view as SpotView } from '../views/spot';
 
 type StampRallyData = {
   stampRally: StampRally | null;
@@ -23,6 +24,9 @@ const view = {
     stampRallySpots(this: StampRallyData): Spot[] {
       return this.stampRally === null ? [] : this.stampRally.spots;
     }
+  },
+  components: {
+    'my-spot': SpotView
   },
   props: ['stamp-rally'],
   template
