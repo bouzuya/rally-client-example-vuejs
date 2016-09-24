@@ -40,6 +40,7 @@
     "cpx": "1.5.0",
     "espower-loader": "1.0.1",
     "http-server": "0.9.0",
+    "js-string-escape": "1.0.1",
     "less": "2.7.1",
     "npm-run-all": "3.1.0",
     "power-assert": "1.4.1",
@@ -63,11 +64,14 @@
     "url": "https://github.com/bouzuya/rally-client-example-vuejs"
   },
   "scripts": {
-    "build": "npm-run-all -s 'build:ts' 'build:es2015' -p 'build:html' 'build:less' 'copy:*'",
+    "build": "npm-run-all -s 'build:template' 'build:ts' 'build:es2015' -p 'build:html' 'build:less' 'copy:*'",
     "build:bundle": "webpack",
     "build:es2015": "babel --out-dir .tmp/es5/ .tmp/es2015/",
     "build:html": "b-html -o public src ",
     "build:less": "lessc --no-js --strict-imports --strict-math=on --strict-units=on src/styles/index.less ./public/index.css",
+    "build:template": "npm-run-all -s 'build:template:bhtml' 'build:template:html'",
+    "build:template:bhtml": "b-html src/templates/",
+    "build:template:html": "node ./scripts/html-to-ts.js src/templates/",
     "build:ts": "tsc",
     "clean": "rimraf .tmp lib public/index.css",
     "copy:dts": "cpx '.tmp/es2015/src/**/*.d.ts' 'lib/'",
@@ -84,6 +88,7 @@
     "watch:html": "watch --wait 2 'npm run build:html' 'src/'",
     "watch:less": "watch --wait 2 'npm run build:less' 'src/styles/'",
     "watch:lint": "watch --wait 2 'npm run lint' 'src/' 'test/'",
+    "watch:template": "watch --wait 2 'npm run build:template' 'src/templates/'",
     "watch:test": "watch --wait 2 'npm test' '.tmp/es5/'",
     "watch:ts": "npm run 'build:ts' -- --watch"
   },
