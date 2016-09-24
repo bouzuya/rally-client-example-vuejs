@@ -1,36 +1,39 @@
 import * as Vue from 'vue';
 import { create } from 'rally-client';
-import { ensureStampCard } from './ensure-stamp-card';
+import { ensureStampCard, StampCard } from './ensure-stamp-card';
 import { ensureUser } from './ensure-user';
 
-const showStampCard = (stampRallyId: string): void => {
+const getStampCard = (stampRallyId: string): Promise<StampCard> => {
   const client = create();
-  ensureUser(client)
-    .then((user) => {
-      console.log(user);
-      return ensureStampCard(client, stampRallyId, user.id);
-    })
-    .then((stampCard) => {
-      console.log(stampCard);
-    });
+  return ensureUser(client).then((user) => {
+    return ensureStampCard(client, stampRallyId, user.id);
+  });
 };
 
 const main = (): void => {
-  type Data = { count: number; };
-  const data: Data = { count: 0 };
+  type Data = { count: number; stampCard: StampCard | null; };
+  const data: Data = { count: 0, stampCard: null };
   const vue = new Vue({
     el: '#app',
     data,
     computed: {
       message(this: Data): string {
         return `count = ${this.count}`;
+      },
+      stampCardId(this: Data): string {
+        const c = this.stampCard;
+        return c === null ? '' : `StampCard = ${c.id}`;
       }
     },
     methods: {
       click(this: Data): void {
         this.count += 1;
+        if (this.stampCard !== null) return;
         const stampRallyId = 'bouzuya';
-        showStampCard(stampRallyId);
+        getStampCard(stampRallyId)
+          .then((stampCard) => {
+            this.stampCard = stampCard;
+          });
       }
     }
   });

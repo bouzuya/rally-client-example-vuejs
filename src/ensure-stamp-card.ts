@@ -56,4 +56,4 @@ const ensureStampCard = (
   });
 };
 
-export { ensureStampCard };
+export { ensureStampCard, StampCard };
