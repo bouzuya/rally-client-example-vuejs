@@ -79,8 +79,9 @@ const main = (): void => {
   type AppData = {
     count: number;
     stampCard: StampCard | null;
+    stampRally: StampRally | null;
   };
-  const data: AppData = { count: 0, stampCard: null };
+  const data: AppData = { count: 0, stampCard: null, stampRally: null };
   const vue = new Vue({
     el: '#app',
     data,
@@ -99,17 +100,8 @@ const main = (): void => {
         if (this.stampCard !== null) return;
         const stampRallyId = 'bouzuya';
         getStampRally(client, stampRallyId)
-          .then(({ name, tagline, description, image, spots }: StampRally) => {
-            console.log(name);
-            console.log(tagline);
-            console.log(description);
-            console.log(image);
-            spots.forEach(({ name, tagline, description, image }) => {
-              console.log(name);
-              console.log(tagline);
-              console.log(description);
-              console.log(image);
-            });
+          .then((stampRally) => {
+            this.stampRally = stampRally;
           });
         getStampCard(client, stampRallyId)
           .then((stampCard) => {
