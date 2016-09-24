@@ -75,23 +75,26 @@ const getStampCard = (
 };
 
 const main = (): void => {
-  type Data = { count: number; stampCard: StampCard | null; };
   const client = create();
-  const data: Data = { count: 0, stampCard: null };
+  type AppData = {
+    count: number;
+    stampCard: StampCard | null;
+  };
+  const data: AppData = { count: 0, stampCard: null };
   const vue = new Vue({
     el: '#app',
     data,
     computed: {
-      message(this: Data): string {
+      message(this: AppData): string {
         return `count = ${this.count}`;
       },
-      stampCardId(this: Data): string {
+      stampCardId(this: AppData): string {
         const c = this.stampCard;
         return c === null ? '' : `StampCard = ${c.id}`;
       }
     },
     methods: {
-      click(this: Data): void {
+      click(this: AppData): void {
         this.count += 1;
         if (this.stampCard !== null) return;
         const stampRallyId = 'bouzuya';
