@@ -5,6 +5,7 @@ import { view as SpotView } from '../views/spot';
 
 export interface Props {
   stampRally: StampRally | null;
+  onClickStampButton(spotId: number): void;
 }
 
 const view = {
@@ -28,7 +29,7 @@ const view = {
   components: {
     'my-spot': <any>SpotView
   },
-  props: ['stamp-rally'],
+  props: ['stampRally', 'onClickStampButton'],
   template
 };
 

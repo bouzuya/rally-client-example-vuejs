@@ -20,3 +20,4 @@
       @v-for spot in stampRallySpots
       <my-spot
         @v-bind:spot spot
+        @v-bind:on-click-stamp-button onClickStampButton

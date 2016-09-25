@@ -3,15 +3,16 @@ import { Spot } from '../types/spot';
 
 export interface Props {
   spot: Spot;
+  onClickStampButton(spotId: number): void;
 }
 
 const view = {
-  props: ['spot'],
+  props: ['spot', 'onClickStampButton'],
   template,
   methods: {
     click(this: Props): void {
-      // TODO
-      console.log(`STAMP = ${this.spot.name}`);
+      // TODO: execute(createStampCommand(this.spot.id));
+      this.onClickStampButton(this.spot.id);
     }
   }
 };

@@ -1,6 +1,8 @@
 import { RallyClient } from 'rally-client';
+import { createStamp } from '../create-stamp';
 import { ensureStampCard, StampCard } from '../ensure-stamp-card';
 import { ensureUser } from '../ensure-user';
+import { getLocation } from '../get-location';
 import { StampRally } from '../types/stamp-rally';
 import { view as StampRallyView } from '../views/stamp-rally';
 import { template } from '../views/templates/app';
@@ -98,6 +100,16 @@ const view = {
       getStampCard(this.client, stampRallyId)
         .then((stampCard) => {
           this.stampCard = stampCard;
+        });
+    },
+    onClickStampButton(this: Props & State, spotId: number): void {
+      const stampRallyId = 'bouzuya';
+      Promise.all([
+        getStampCard(this.client, stampRallyId),
+        getLocation()
+      ])
+        .then(([stampCard, { lat, lng }]) => {
+          return createStamp(this.client, stampCard.id, spotId, lat, lng);
         });
     }
   },
