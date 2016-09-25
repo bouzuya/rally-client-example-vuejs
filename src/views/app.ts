@@ -6,6 +6,7 @@ import { view as StampRallyView } from '../views/stamp-rally';
 import { template } from '../views/templates/app';
 
 interface ApiSpot {
+  id: number;
   name: string;
   tagline: string | null;
   description: string | null;
@@ -38,11 +39,13 @@ const getStampRally = (
       description: descriptionHtml === null ? '' : descriptionHtml,
       image,
       spots: spots.map((spot) => {
+        const id = spot.id;
         const name = spot.name;
         const taglineHtml = spot.tagline;
         const descriptionHtml = spot.description;
         const image = spot.images.length > 0 ? spot.images[0].s640 : null;
         return {
+          id,
           name,
           tagline: taglineHtml === null ? '' : taglineHtml,
           description: descriptionHtml === null ? '' : descriptionHtml,
