@@ -3,30 +3,30 @@ import { StampRally } from '../types/stamp-rally';
 import { template } from '../views/templates/stamp-rally';
 import { view as SpotView } from '../views/spot';
 
-type StampRallyData = {
+export interface Props {
   stampRally: StampRally | null;
-};
+}
 
 const view = {
   computed: {
-    stampRallyName(this: StampRallyData): string {
+    stampRallyName(this: Props): string {
       return this.stampRally === null ? '' : this.stampRally.name;
     },
-    stampRallyTagline(this: StampRallyData): string {
+    stampRallyTagline(this: Props): string {
       return this.stampRally === null ? '' : this.stampRally.tagline;
     },
-    stampRallyDescription(this: StampRallyData): string {
+    stampRallyDescription(this: Props): string {
       return this.stampRally === null ? '' : this.stampRally.description;
     },
-    stampRallyImage(this: StampRallyData): string | null {
+    stampRallyImage(this: Props): string | null {
       return this.stampRally === null ? null : this.stampRally.image;
     },
-    stampRallySpots(this: StampRallyData): Spot[] {
+    stampRallySpots(this: Props): Spot[] {
       return this.stampRally === null ? [] : this.stampRally.spots;
     }
   },
   components: {
-    'my-spot': SpotView
+    'my-spot': <any>SpotView
   },
   props: ['stamp-rally'],
   template
