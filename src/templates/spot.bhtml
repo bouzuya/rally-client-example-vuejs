@@ -15,3 +15,7 @@
       @width 64
       @height 64
       @v-bind:src spot.image
+  <div
+    @class stamp
+    @v-on:click click
+    Stamp

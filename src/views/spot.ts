@@ -7,7 +7,13 @@ export interface Props {
 
 const view = {
   props: ['spot'],
-  template
+  template,
+  methods: {
+    click(this: Props): void {
+      // TODO
+      console.log(`STAMP = ${this.spot.name}`);
+    }
+  }
 };
 
 export { view };
