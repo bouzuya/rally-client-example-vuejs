@@ -12,17 +12,8 @@
   <body
     <div
       @id app
-      <h1
-        @class title
-        @v-on:click click
-        <p
-          @class stamp-card-id
-          {{stampCardId}}
-      <my-stamp-rally
-        @v-bind:stamp-rally stampRally
-      <p
-        @class description
-        This is unofficial RALLY client.
+      <my-app
+        @v-bind:client client
     <script
       @type text/javascript
       @src /index.js

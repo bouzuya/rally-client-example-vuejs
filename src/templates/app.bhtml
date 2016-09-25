@@ -1,0 +1,14 @@
+<div
+  @class app
+  <h1
+    @class title
+    @v-on:click click
+    <p
+      @class stamp-card-id
+      Load
+      {{stampCardId}}
+  <my-stamp-rally
+    @v-bind:stamp-rally stampRally
+  <p
+    @class description
+    This is unofficial RALLY client.
