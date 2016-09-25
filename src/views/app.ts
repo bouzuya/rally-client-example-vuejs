@@ -73,6 +73,7 @@ export interface Props {
 export interface State {
   stampCard: StampCard | null;
   stampRally: StampRally | null;
+  stampRallyId: string;
 }
 
 const view = {
@@ -87,25 +88,27 @@ const view = {
     }
   },
   data(): State {
-    return { stampCard: null, stampRally: null };
+    return {
+      stampCard: null,
+      stampRally: null,
+      stampRallyId: 'bouzuya'
+    };
   },
   methods: {
     click(this: Props & State): void {
       if (this.stampCard !== null) return;
-      const stampRallyId = 'bouzuya';
-      getStampRally(this.client, stampRallyId)
+      getStampRally(this.client, this.stampRallyId)
         .then((stampRally) => {
           this.stampRally = stampRally;
         });
-      getStampCard(this.client, stampRallyId)
+      getStampCard(this.client, this.stampRallyId)
         .then((stampCard) => {
           this.stampCard = stampCard;
         });
     },
     onClickStampButton(this: Props & State, spotId: number): void {
-      const stampRallyId = 'bouzuya';
       Promise.all([
-        getStampCard(this.client, stampRallyId),
+        getStampCard(this.client, this.stampRallyId),
         getLocation()
       ])
         .then(([stampCard, { lat, lng }]) => {
