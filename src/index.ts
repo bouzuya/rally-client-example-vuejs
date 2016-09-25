@@ -64,11 +64,10 @@ const getStampCard = (
 const main = (): void => {
   const client = create();
   type AppData = {
-    count: number;
     stampCard: StampCard | null;
     stampRally: StampRally | null;
   };
-  const data: AppData = { count: 0, stampCard: null, stampRally: null };
+  const data: AppData = { stampCard: null, stampRally: null };
   const vue = new Vue({
     el: '#app',
     data,
@@ -76,9 +75,6 @@ const main = (): void => {
       'my-stamp-rally': StampRallyView
     },
     computed: {
-      message(this: AppData): string {
-        return `count = ${this.count}`;
-      },
       stampCardId(this: AppData): string {
         const c = this.stampCard;
         return c === null ? '' : `StampCard = ${c.id}`;
@@ -86,7 +82,6 @@ const main = (): void => {
     },
     methods: {
       click(this: AppData): void {
-        this.count += 1;
         if (this.stampCard !== null) return;
         const stampRallyId = 'bouzuya';
         getStampRally(client, stampRallyId)

@@ -16,9 +16,6 @@
         @class title
         @v-on:click click
         <p
-          @class message
-          {{message}}
-        <p
           @class stamp-card-id
           {{stampCardId}}
       <my-stamp-rally
