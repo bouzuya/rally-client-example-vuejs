@@ -22,7 +22,7 @@
     "url": "https://github.com/bouzuya/rally-client-example-vuejs/issues"
   },
   "dependencies": {
-    "rally-client": "0.1.1",
+    "rally-client": "0.1.2",
     "vue": "2.0.0-rc.6"
   },
   "devDependencies": {
