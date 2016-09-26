@@ -1,0 +1,18 @@
+<div
+  @class footer
+  This is unofficial RALLY client
+  </br
+  <address
+    <a
+      @href http://bouzuya.net
+      @target _blank
+      >bouzuya
+  <span
+    @class powered-by
+    powered by&nbsp;
+    <span
+      @class rally
+      <a
+        @href https://rallyapp.jp
+        @target _blank
+        RALLY
