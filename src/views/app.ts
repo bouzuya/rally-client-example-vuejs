@@ -4,6 +4,7 @@ import { ensureStampCard, StampCard } from '../ensure-stamp-card';
 import { ensureUser } from '../ensure-user';
 import { getLocation } from '../get-location';
 import { StampRally } from '../types/stamp-rally';
+import { view as HeaderView } from '../views/header';
 import { view as StampRallyView } from '../views/stamp-rally';
 import { template } from '../views/templates/app';
 
@@ -79,6 +80,7 @@ export interface State {
 const view = {
   props: ['client'],
   components: {
+    'my-header': <any>HeaderView,
     'my-stamp-rally': <any>StampRallyView
   },
   computed: {
@@ -95,17 +97,6 @@ const view = {
     };
   },
   methods: {
-    click(this: Props & State): void {
-      if (this.stampCard !== null) return;
-      getStampRally(this.client, this.stampRallyId)
-        .then((stampRally) => {
-          this.stampRally = stampRally;
-        });
-      getStampCard(this.client, this.stampRallyId)
-        .then((stampCard) => {
-          this.stampCard = stampCard;
-        });
-    },
     onClickStampButton(this: Props & State, spotId: number): void {
       Promise.all([
         getStampCard(this.client, this.stampRallyId),
@@ -114,6 +105,23 @@ const view = {
         .then(([stampCard, { lat, lng }]) => {
           return createStamp(this.client, stampCard.id, spotId, lat, lng);
         });
+    },
+    onClickSwitchButton(this: Props & State, stampRallyId: string): void {
+      this.stampRallyId = stampRallyId;
+      this.stampCard = null;
+      this.stampRally = null;
+      if (this.stampCard === null) {
+        getStampCard(this.client, this.stampRallyId)
+          .then((stampCard) => {
+            this.stampCard = stampCard;
+          });
+      }
+      if (this.stampRally === null) {
+        getStampRally(this.client, this.stampRallyId)
+          .then((stampRally) => {
+            this.stampRally = stampRally;
+          });
+      }
     }
   },
   template

@@ -1,11 +1,11 @@
 <div
   @class app
+  <my-header
+    @v-bind:on-click-switch-button onClickSwitchButton
   <h1
     @class title
-    @v-on:click click
     <p
       @class stamp-card-id
-      Load
       {{stampCardId}}
   <my-stamp-rally
     @v-bind:stamp-rally stampRally
