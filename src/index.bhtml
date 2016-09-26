@@ -13,7 +13,6 @@
     <div
       @id app
       <my-app
-        @v-bind:client client
     <script
       @type text/javascript
       @src /index.js

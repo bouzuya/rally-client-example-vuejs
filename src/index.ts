@@ -1,12 +1,9 @@
 import * as Vue from 'vue';
-import { create } from 'rally-client';
 import { view as AppView } from './views/app';
 
 const main = (): void => {
-  const client = create();
   const vue = new Vue({
     el: '#app',
-    data: { client },
     components: {
       'my-app': AppView
     }

@@ -1,4 +1,4 @@
-import { RallyClient } from 'rally-client';
+import { create, RallyClient } from 'rally-client';
 import { createStamp } from '../create-stamp';
 import { ensureStampCard, StampCard } from '../ensure-stamp-card';
 import { ensureUser } from '../ensure-user';
@@ -69,17 +69,16 @@ const getStampCard = (
 };
 
 export interface Props {
-  client: RallyClient;
 }
 
 export interface State {
+  client: RallyClient;
   stampCard: StampCard | null;
   stampRally: StampRally | null;
   stampRallyId: string;
 }
 
 const view = {
-  props: ['client'],
   components: {
     'my-footer': <any>FooterView,
     'my-header': <any>HeaderView,
@@ -93,6 +92,7 @@ const view = {
   },
   data(): State {
     return {
+      client: create(),
       stampCard: null,
       stampRally: null,
       stampRallyId: 'bouzuya'
