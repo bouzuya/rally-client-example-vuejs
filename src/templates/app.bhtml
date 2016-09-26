@@ -10,6 +10,4 @@
   <my-stamp-rally
     @v-bind:stamp-rally stampRally
     @v-bind:on-click-stamp-button onClickStampButton
-  <p
-    @class description
-    This is unofficial RALLY client.
+  <my-footer

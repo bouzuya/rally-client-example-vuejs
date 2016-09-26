@@ -4,6 +4,7 @@ import { ensureStampCard, StampCard } from '../ensure-stamp-card';
 import { ensureUser } from '../ensure-user';
 import { getLocation } from '../get-location';
 import { StampRally } from '../types/stamp-rally';
+import { view as FooterView } from '../views/footer';
 import { view as HeaderView } from '../views/header';
 import { view as StampRallyView } from '../views/stamp-rally';
 import { template } from '../views/templates/app';
@@ -80,6 +81,7 @@ export interface State {
 const view = {
   props: ['client'],
   components: {
+    'my-footer': <any>FooterView,
     'my-header': <any>HeaderView,
     'my-stamp-rally': <any>StampRallyView
   },
