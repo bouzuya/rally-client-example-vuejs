@@ -1,0 +1,14 @@
+<div
+  @class header
+  <div
+    @class logo
+    Rv
+  <div
+    @class switcher
+    <input
+      @type text
+      @v-model stampRallyId
+    <button
+      @class button
+      @v-on:click click
+      switch
