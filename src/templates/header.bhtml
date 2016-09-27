@@ -5,10 +5,13 @@
     Rv
   <div
     @class switcher
-    <input
-      @type text
-      @v-model stampRallyId
-    <button
+    <div
+      @class input
+      <input
+        @type text
+        @v-model stampRallyId
+    <div
       @class button
-      @v-on:click click
-      switch
+      <button
+        @v-on:click click
+        Go
