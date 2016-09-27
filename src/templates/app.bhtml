@@ -2,12 +2,6 @@
   @class app
   <my-header
     @v-bind:on-click-switch-button onClickSwitchButton
-  <h1
-    @class title
-    <p
-      @class stamp-card-id
-      {{stampCardId}}
-  <my-stamp-rally
-    @v-bind:stamp-rally stampRally
-    @v-bind:on-click-stamp-button onClickStampButton
+  <my-body
+    @v-bind:stamp-rally-id stampRallyId
   <my-footer
