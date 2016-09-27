@@ -7,6 +7,12 @@ export interface Props {
 }
 
 const view = {
+  computed: {
+    mapUrl(this: Props): string {
+      const { lat, lng } = this.spot;
+      return `https://maps.google.com/?q=${lat},${lng}`;
+    }
+  },
   props: ['spot', 'onClickStampButton'],
   template,
   methods: {

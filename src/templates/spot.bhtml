@@ -19,3 +19,9 @@
     @class stamp
     @v-on:click click
     Stamp
+  <div
+    @class map
+    <a
+      @v-bind:href mapUrl
+      @target _blank
+      Map

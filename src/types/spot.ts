@@ -4,4 +4,6 @@ export interface Spot {
   tagline: string;
   description: string;
   image: string | null;
+  lat: number;
+  lng: number;
 }

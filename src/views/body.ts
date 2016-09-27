@@ -13,6 +13,8 @@ interface ApiSpot {
   tagline: string | null;
   description: string | null;
   images: { s640: string; }[];
+  lat: string;
+  lng: string;
 }
 
 interface ApiStampRally {
@@ -46,12 +48,16 @@ const getStampRally = (
         const taglineHtml = spot.tagline;
         const descriptionHtml = spot.description;
         const image = spot.images.length > 0 ? spot.images[0].s640 : null;
+        const lat = +spot.lat;
+        const lng = +spot.lng;
         return {
           id,
           name,
           tagline: taglineHtml === null ? '' : taglineHtml,
           description: descriptionHtml === null ? '' : descriptionHtml,
-          image
+          image,
+          lat,
+          lng
         };
       })
     };
