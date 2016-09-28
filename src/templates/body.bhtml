@@ -1,10 +1,5 @@
 <div
   @class body
-  <h1
-    @class title
-    <p
-      @class stamp-card-id
-      {{stampCardId}}
   <my-stamp-rally
     @v-bind:stamp-rally stampRally
     @v-bind:on-click-stamp-button onClickStampButton
@@ -16,3 +11,7 @@
       <my-spot
         @v-bind:spot spot
         @v-bind:on-click-stamp-button onClickStampButton
+  <span
+    @style display: none
+    @class stamp-card-id
+    {{stampCardId}}

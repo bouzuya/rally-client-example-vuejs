@@ -1,3 +1,123 @@
 .body() {
   background-color: #0f0;
+  > .stamp-rally {
+    position: relative;
+    > .name {
+      position: absolute;
+      bottom: 36px;
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      color: #eee;
+      height: 48px;
+      font-size: 24px;
+      padding: 0px 16px;
+      line-height: 48px;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+    > .tagline {
+      position: absolute;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      color: #ddd;
+      height: 36px;
+      font-size: 18px;
+      padding: 0px 16px;
+      line-height: 36px;
+      overflow: hidden;
+      box-sizing: border-box;
+      > p {
+        display: inline;
+      }
+    }
+    > .description {
+      display: none;
+    }
+    > .image {
+      width: 100%;
+      text-align: center;
+      > img {
+        width: 100%;
+        height: auto;
+        max-width: 640px;
+      }
+    }
+  }
+  > .spot-list {
+    > .spot-item {
+      width: 100%;
+      height: 80px;
+      > .spot {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        &:hover > .stamp, &:active > .stamp {
+          height: 24px;
+        }
+        > .name {
+          position: absolute;
+          top: 8px;
+          left: 120px;
+          padding: 0px 8px;
+          height: 32px;
+          line-height: 32px;
+          overflow: hidden;
+        }
+        > .tagline {
+          position: absolute;
+          top: 40px;
+          left: 80px;
+          height: 32px;
+          overflow: hidden;
+          line-height: 32px;
+          padding: 0 8px;
+        }
+        > .image {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 80px;
+          height: 80px;
+          box-sizing: border-box;
+          padding: 8px;
+        }
+        > .stamp {
+          position: absolute;
+          left: 0px;
+          z-index: 1;
+          width: 80px;
+          bottom: 0;
+          height: 24px;
+          background-color: rgba(0, 0, 0, 0.5);
+          text-align: center;
+          color: #ddd;
+          line-height: 24px;
+          font-size: 16px;
+          overflow: hidden;
+          height: 0;
+          cursor: pointer;
+          &:hover, &:active {
+            height: 80px;
+            line-height: 80px;
+          }
+        }
+        > .description {
+          display: none;
+        }
+        > .map {
+          position: absolute;
+          left: 80px;
+          top: 8px;
+          width: 32px;
+          height: 32px;
+          background-color: #333;
+          box-sizing: border-box;
+          padding: 0 8px;
+          line-height: 32px;
+          overflow: hidden;
+        }
+      }
+    }
+  }
 }
