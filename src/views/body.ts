@@ -3,7 +3,9 @@ import { createStamp } from '../create-stamp';
 import { ensureStampCard, StampCard } from '../ensure-stamp-card';
 import { ensureUser } from '../ensure-user';
 import { getLocation } from '../get-location';
+import { Spot } from '../types/spot';
 import { StampRally } from '../types/stamp-rally';
+import { view as SpotView } from '../views/spot';
 import { view as StampRallyView } from '../views/stamp-rally';
 import { template } from '../views/templates/body';
 
@@ -85,12 +87,16 @@ export interface State {
 const view = {
   props: ['stampRallyId'],
   components: {
+    'my-spot': <any>SpotView,
     'my-stamp-rally': <any>StampRallyView
   },
   computed: {
     stampCardId(this: Props & State): string {
       const c = this.stampCard;
       return c === null ? '' : `StampCard = ${c.id}`;
+    },
+    stampRallySpots(this: Props & State): Spot[] {
+      return this.stampRally === null ? [] : this.stampRally.spots;
     }
   },
   data(): State {

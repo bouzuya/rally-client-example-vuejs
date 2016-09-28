@@ -8,3 +8,11 @@
   <my-stamp-rally
     @v-bind:stamp-rally stampRally
     @v-bind:on-click-stamp-button onClickStampButton
+  <ul
+    @class spot-list
+    <li
+      @class spot-item
+      @v-for spot in stampRallySpots
+      <my-spot
+        @v-bind:spot spot
+        @v-bind:on-click-stamp-button onClickStampButton

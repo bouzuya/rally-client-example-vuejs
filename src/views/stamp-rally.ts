@@ -1,11 +1,8 @@
-import { Spot } from '../types/spot';
 import { StampRally } from '../types/stamp-rally';
 import { template } from '../views/templates/stamp-rally';
-import { view as SpotView } from '../views/spot';
 
 export interface Props {
   stampRally: StampRally | null;
-  onClickStampButton(spotId: number): void;
 }
 
 const view = {
@@ -21,15 +18,9 @@ const view = {
     },
     stampRallyImage(this: Props): string | null {
       return this.stampRally === null ? null : this.stampRally.image;
-    },
-    stampRallySpots(this: Props): Spot[] {
-      return this.stampRally === null ? [] : this.stampRally.spots;
     }
   },
-  components: {
-    'my-spot': <any>SpotView
-  },
-  props: ['stampRally', 'onClickStampButton'],
+  props: ['stampRally'],
   template
 };
 

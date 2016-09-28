@@ -15,9 +15,3 @@
       @width 64
       @height 64
       @v-bind:src stampRallyImage
-  <ul
-    <li
-      @v-for spot in stampRallySpots
-      <my-spot
-        @v-bind:spot spot
-        @v-bind:on-click-stamp-button onClickStampButton
