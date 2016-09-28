@@ -22,6 +22,7 @@
     "url": "https://github.com/bouzuya/rally-client-example-vuejs/issues"
   },
   "dependencies": {
+    "font-awesome": "4.6.3",
     "rally-client": "0.1.2",
     "vue": "2.0.0-rc.6"
   },
@@ -75,6 +76,7 @@
     "build:ts": "tsc",
     "clean": "rimraf .tmp lib public/index.css",
     "copy:dts": "cpx '.tmp/es2015/src/**/*.d.ts' 'lib/'",
+    "copy:font": "cpx 'node_modules/font-awesome/fonts/*' 'public/fonts/'",
     "copy:js": "cpx '.tmp/es5/src/**/*.js' 'lib/'",
     "lint": "npm-run-all -p 'lint:*'",
     "lint:ts": "tslint --project tsconfig.json",
