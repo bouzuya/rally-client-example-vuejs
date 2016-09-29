@@ -2,6 +2,7 @@ import { template } from '../views/templates/spot';
 import { Spot } from '../types/spot';
 
 export interface Props {
+  stampRallyId: string;
   spot: Spot;
   isStamped: boolean;
   onClickStampButton(spotId: number): void;
@@ -15,9 +16,13 @@ const view = {
     mapUrl(this: Props): string {
       const { lat, lng } = this.spot;
       return `https://maps.google.com/?q=${lat},${lng}`;
+    },
+    spotUrl(this: Props): string {
+      const baseUrl = `https://${this.stampRallyId}.stamprally.net`;
+      return `${baseUrl}/#/spots/${this.spot.id}`;
     }
   },
-  props: ['spot', 'isStamped', 'onClickStampButton'],
+  props: ['spot', 'stampRallyId', 'isStamped', 'onClickStampButton'],
   template,
   methods: {
     click(this: Props): void {

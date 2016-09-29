@@ -1,6 +1,13 @@
 <div
   @class spot
   <div
+    @class rally
+    <a
+      @v-bind:href spotUrl
+      @class link
+      @target _blank
+      R
+  <div
     @class name
     @v-text spot.name
   <div
