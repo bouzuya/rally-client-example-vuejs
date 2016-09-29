@@ -2,6 +2,14 @@
 
 An unofficial rally client using Vue.js
 
+## Deployment
+
+```
+$ heroku create
+$ git push heroku master
+$ heroku config:set NPM_CONFIG_PRODUCTION=false
+```
+
 ## Badges
 
 [![Travis CI][travis-ci-badge]][travis-ci]
