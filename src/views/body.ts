@@ -21,6 +21,7 @@ interface ApiSpot {
 }
 
 interface ApiStampRally {
+  name: string;
   displayName: string;
   tagline: string | null;
   description: string | null;
@@ -35,12 +36,14 @@ const getStampRally = (
     method: 'GET',
     path: `/rallies/${stampRallyId}`
   }).then((rally: ApiStampRally) => {
+    const id = rally.name;
     const name = rally.displayName;
     const taglineHtml = rally.tagline;
     const descriptionHtml = rally.description;
     const spots = rally.spots;
     const image = rally.images.length > 0 ? rally.images[0].s640 : null;
     return {
+      id,
       name,
       tagline: taglineHtml === null ? '' : taglineHtml,
       description: descriptionHtml === null ? '' : descriptionHtml,
