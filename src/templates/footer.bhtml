@@ -1,18 +1,33 @@
 <div
   @class footer
-  This is unofficial RALLY client
-  </br
-  <address
-    <a
-      @href http://bouzuya.net
-      @target _blank
-      >bouzuya
-  <span
-    @class powered-by
-    powered by&nbsp;
-    <span
-      @class rally
-      <a
-        @href https://rallyapp.jp
-        @target _blank
-        RALLY
+  <p
+    This is an unofficial RALLY client
+  <ul
+    <li
+      <address
+        <span
+          @class created-by
+          created by&nbsp;
+          <span
+            @class bouzuya
+            <a
+              @href http://bouzuya.net
+              @target _blank
+              >bouzuya
+    <li
+      <span
+        @class powered-by
+        powered by&nbsp;
+        <span
+          @class rally
+          <a
+            @href https://rallyapp.jp
+            @target _blank
+            RALLY
+    <li
+      <span
+        @class source
+        <a
+          @href https://github.com/bouzuya/rally-client-example-vuejs
+          @target _blank
+          source code &amp; license
