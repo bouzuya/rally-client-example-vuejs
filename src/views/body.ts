@@ -17,6 +17,7 @@ interface ApiSpot {
   images: { s640: string; }[];
   lat: string;
   lng: string;
+  stampByLocation: boolean;
 }
 
 interface ApiStampRally {
@@ -52,6 +53,7 @@ const getStampRally = (
         const image = spot.images.length > 0 ? spot.images[0].s640 : null;
         const lat = +spot.lat;
         const lng = +spot.lng;
+        const stampByLocation = spot.stampByLocation;
         return {
           id,
           name,
@@ -59,7 +61,8 @@ const getStampRally = (
           description: descriptionHtml === null ? '' : descriptionHtml,
           image,
           lat,
-          lng
+          lng,
+          stampByLocation
         };
       })
     };

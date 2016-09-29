@@ -18,7 +18,7 @@
   <div
     @class stamp
     @v-on:click click
-    @v-bind:class { 'is-stamped': isStamped }
+    @v-bind:class { 'is-stamped': isStamped, 'is-disabled': isDisabled }
     <span
       @class button
       <i

@@ -102,9 +102,25 @@
           overflow: hidden;
           height: 0;
           cursor: pointer;
-          &.is-stamped > .button > .image {
-            .fa();
-            .fa-check-square-o();
+          &.is-stamped {
+            cursor: default;
+            > .button > .image {
+              .fa();
+              .fa-check-square-o();
+            }
+          }
+          &.is-disabled {
+            cursor: default;
+            > .button {
+              > .image {
+                display: none;
+                // .fa();
+                // .fa-square();
+              }
+              > .label {
+                display: none;
+              }
+            }
           }
           > .button {
             > .image {

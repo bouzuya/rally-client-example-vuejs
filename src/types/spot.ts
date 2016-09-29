@@ -6,4 +6,5 @@ export interface Spot {
   image: string | null;
   lat: number;
   lng: number;
+  stampByLocation: true;
 }

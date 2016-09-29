@@ -9,6 +9,9 @@ export interface Props {
 
 const view = {
   computed: {
+    isDisabled(this: Props): boolean {
+      return !this.spot.stampByLocation;
+    },
     mapUrl(this: Props): string {
       const { lat, lng } = this.spot;
       return `https://maps.google.com/?q=${lat},${lng}`;
@@ -19,6 +22,7 @@ const view = {
   methods: {
     click(this: Props): void {
       // TODO: execute(createStampCommand(this.spot.id));
+      if (!this.spot.stampByLocation) return;
       this.onClickStampButton(this.spot.id);
     }
   }
