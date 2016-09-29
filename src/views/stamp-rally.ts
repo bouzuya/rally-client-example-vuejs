@@ -18,6 +18,10 @@ const view = {
     },
     stampRallyImage(this: Props): string | null {
       return this.stampRally === null ? null : this.stampRally.image;
+    },
+    stampRallyUrl(this: Props): string | null {
+      return this.stampRally === null
+        ? null : `https://${this.stampRally.id}.stamprally.net`;
     }
   },
   props: ['stampRally'],

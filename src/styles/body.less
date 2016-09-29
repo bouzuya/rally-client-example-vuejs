@@ -4,6 +4,21 @@
     position: relative;
     width: 100%;
     height: 240px;
+    > .rally {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      line-height: 32px;
+      width: 32px;
+      height: 32px;
+      text-align: center;
+      z-index: 2;
+      > .link {
+        display: block;
+        color: #eee;
+        text-decoration: none;
+      }
+    }
     > .name {
       position: absolute;
       bottom: 36px;
@@ -16,6 +31,7 @@
       line-height: 48px;
       overflow: hidden;
       box-sizing: border-box;
+      z-index: 1;
     }
     > .tagline {
       position: absolute;
@@ -29,6 +45,7 @@
       line-height: 36px;
       overflow: hidden;
       box-sizing: border-box;
+      z-index: 1;
       > p {
         display: inline;
       }

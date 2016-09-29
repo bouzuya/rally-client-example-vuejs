@@ -9,6 +9,7 @@
       @class spot-item
       @v-for spot in stampRallySpots
       <my-spot
+        @v-bind:stamp-rally-id stampRallyId
         @v-bind:spot spot
         @v-bind:is-stamped isStamped(spot)
         @v-bind:on-click-stamp-button onClickStampButton

@@ -1,6 +1,13 @@
 <div
   @class stamp-rally
   <div
+    @class rally
+    <a
+      @v-bind:href stampRallyUrl
+      @class link
+      @target _blank
+      R
+  <div
     @class name
     @v-text stampRallyName
   <div
