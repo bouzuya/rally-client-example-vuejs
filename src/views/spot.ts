@@ -3,6 +3,7 @@ import { Spot } from '../types/spot';
 
 export interface Props {
   spot: Spot;
+  isStamped: boolean;
   onClickStampButton(spotId: number): void;
 }
 
@@ -13,7 +14,7 @@ const view = {
       return `https://maps.google.com/?q=${lat},${lng}`;
     }
   },
-  props: ['spot', 'onClickStampButton'],
+  props: ['spot', 'isStamped', 'onClickStampButton'],
   template,
   methods: {
     click(this: Props): void {

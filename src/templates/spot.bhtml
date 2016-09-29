@@ -18,7 +18,14 @@
   <div
     @class stamp
     @v-on:click click
-    Stamp
+    @v-bind:class { 'is-stamped': isStamped }
+    <span
+      @class button
+      <i
+        @class image
+      <span
+        @class label
+        Stamp
   <div
     @class map
     <a

@@ -1,6 +1,12 @@
 import { RallyClient } from 'rally-client';
 
-type StampCard = any;
+type StampCard = {
+  id: number;
+  spots: {
+    id: number;
+    stamped: boolean;
+  }[];
+};
 
 const getStampCards = (
   client: RallyClient,
