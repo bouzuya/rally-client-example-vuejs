@@ -23,6 +23,7 @@ const view = {
     click(this: Props): void {
       // TODO: execute(createStampCommand(this.spot.id));
       if (!this.spot.stampByLocation) return;
+      if (this.isStamped) return;
       this.onClickStampButton(this.spot.id);
     }
   }
