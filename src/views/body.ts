@@ -121,6 +121,13 @@ const view = {
       ])
         .then(([stampCard, { lat, lng }]) => {
           return createStamp(this.client, stampCard.id, spotId, lat, lng);
+        })
+        .then(() => {
+          // reload stamp card
+          return getStampCard(this.client, this.stampRallyId);
+        })
+        .then((stampCard) => {
+          this.stampCard = stampCard;
         });
     },
     switch(this: Props & State, stampRallyId: string): void {
