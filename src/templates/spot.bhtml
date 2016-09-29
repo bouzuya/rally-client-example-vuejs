@@ -22,6 +22,11 @@
   <div
     @class map
     <a
+      @class link
       @v-bind:href mapUrl
       @target _blank
-      Map
+      <i
+        @class image
+      <span
+        @class label
+        Map

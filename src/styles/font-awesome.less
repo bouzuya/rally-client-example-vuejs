@@ -7,7 +7,7 @@
   font-style: normal;
 }
 
-.fa {
+.fa() {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -16,6 +16,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.fa-map-o:before {
-  content: "\f278";
+.fa-map-o() {
+  &:before {
+    content: "\f278";
+  }
 }
