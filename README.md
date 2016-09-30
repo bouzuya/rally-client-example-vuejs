@@ -1,6 +1,6 @@
-# rally-client-example-vuejs
+![rally-client-example-vuejs logo](https://cloud.githubusercontent.com/assets/1221346/18981306/f995a3d2-8717-11e6-96af-0ebcd3062c0e.png)
 
-An unofficial rally client using Vue.js
+rally-client-example-vuejs: An unofficial rally client using Vue.js
 
 ## Deployment
 
