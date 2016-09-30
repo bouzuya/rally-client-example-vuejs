@@ -1,7 +1,7 @@
 <div
   @class app
   <my-header
-    @v-bind:on-click-switch-button onClickSwitchButton
+    @v-on:switch-stamp-rally switchStampRally
   <my-body
     @v-bind:stamp-rally-id stampRallyId
   <my-footer
