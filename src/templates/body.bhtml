@@ -2,7 +2,6 @@
   @class body
   <my-stamp-rally
     @v-bind:stamp-rally stampRally
-    @v-bind:on-click-stamp-button onClickStampButton
   <ul
     @class spot-list
     <li
