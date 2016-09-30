@@ -2,7 +2,10 @@
   @class header
   <div
     @class logo
-    Rv
+    <img
+      @src https://cloud.githubusercontent.com/assets/1221346/18981306/f995a3d2-8717-11e6-96af-0ebcd3062c0e.png
+      @width 64
+      @height 64
   <div
     @class switcher
     <div
