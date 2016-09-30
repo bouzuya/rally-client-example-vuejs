@@ -120,7 +120,7 @@ const view = {
       if (this.stampCard === null) return false;
       return this.stampCard.spots.some((s) => s.id === spot.id && s.stamped);
     },
-    onClickStampButton(this: Props & State, spotId: number): void {
+    stamp(this: Props & State, spotId: number): void {
       Promise.all([
         getStampCard(this.client, this.stampRallyId),
         getLocation()

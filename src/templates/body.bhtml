@@ -11,7 +11,7 @@
         @v-bind:stamp-rally-id stampRallyId
         @v-bind:spot spot
         @v-bind:is-stamped isStamped(spot)
-        @v-bind:on-click-stamp-button onClickStampButton
+        @v-on:stamp stamp
   <span
     @style display: none
     @class stamp-card-id

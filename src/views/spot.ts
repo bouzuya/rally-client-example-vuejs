@@ -5,7 +5,6 @@ export interface Props {
   stampRallyId: string;
   spot: Spot;
   isStamped: boolean;
-  onClickStampButton(spotId: number): void;
 }
 
 const view = {
@@ -22,14 +21,14 @@ const view = {
       return `${baseUrl}/#/spots/${this.spot.id}`;
     }
   },
-  props: ['spot', 'stampRallyId', 'isStamped', 'onClickStampButton'],
+  props: ['spot', 'stampRallyId', 'isStamped'],
   template,
   methods: {
-    click(this: Props): void {
+    click(this: Props & { $emit: Function; }): void {
       // TODO: execute(createStampCommand(this.spot.id));
       if (!this.spot.stampByLocation) return;
       if (this.isStamped) return;
-      this.onClickStampButton(this.spot.id);
+      this.$emit('stamp', this.spot.id);
     }
   }
 };
