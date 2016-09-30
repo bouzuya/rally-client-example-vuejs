@@ -74,7 +74,7 @@
     "build:template:bhtml": "b-html -o .tmp/templates/ src/templates/",
     "build:template:html": "node ./scripts/html-to-ts.js .tmp/templates/ src/views/templates/",
     "build:ts": "tsc",
-    "clean": "rimraf .tmp lib public/index.css",
+    "clean": "rimraf .tmp lib public/index.css 'src/views/templates/*'",
     "copy:dts": "cpx '.tmp/es2015/src/**/*.d.ts' 'lib/'",
     "copy:font": "cpx 'node_modules/font-awesome/fonts/*' 'public/fonts/'",
     "copy:js": "cpx '.tmp/es5/src/**/*.js' 'lib/'",
