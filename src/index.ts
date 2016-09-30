@@ -2,13 +2,12 @@ import * as Vue from 'vue';
 import { view as AppView } from './views/app';
 
 const main = (): void => {
-  const vue = new Vue({
+  new Vue({
     el: '#app',
     components: {
       'my-app': AppView
     }
   });
-  console.log(vue);
 };
 
 const ready = (callback: Function): void => {

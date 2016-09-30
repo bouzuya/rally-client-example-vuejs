@@ -23,7 +23,6 @@ const view = {
   },
   methods: {
     switchStampRally(this: Props & State, stampRallyId: string): void {
-      console.log('swi');
       this.stampRallyId = stampRallyId;
     }
   },
