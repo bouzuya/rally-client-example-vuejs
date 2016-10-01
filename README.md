@@ -2,6 +2,14 @@
 
 rally-client-example-vuejs: An unofficial rally client using Vue.js
 
+## Development
+
+```
+$ npm install
+$ npm run watch
+$ # open by VS Code & press F5 key ('Debug: Start Debugging')
+```
+
 ## Deployment
 
 ```
