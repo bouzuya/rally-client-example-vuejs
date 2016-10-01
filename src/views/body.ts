@@ -91,7 +91,7 @@ export interface State {
 }
 
 const view = {
-  props: ['stampRallyId'],
+  props: ['bus', 'stampRallyId'],
   components: {
     'my-spot': <any>SpotView,
     'my-stamp-rally': <any>StampRallyView

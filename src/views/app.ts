@@ -26,6 +26,7 @@ const view = {
       this.stampRallyId = stampRallyId;
     }
   },
+  props: ['bus'],
   template
 };
 
