@@ -1,9 +1,11 @@
 import * as Vue from 'vue';
 import { view as AppView } from './views/app';
 import { newMessageBus } from './message-bus';
+import { attach } from './handler';
 
 const main = (): void => {
   const bus = newMessageBus();
+  attach(bus);
   new Vue({
     el: '#app',
     data: { bus },
