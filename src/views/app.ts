@@ -2,8 +2,10 @@ import { view as BodyView } from '../views/body';
 import { view as FooterView } from '../views/footer';
 import { view as HeaderView } from '../views/header';
 import { template } from '../views/templates/app';
+import { MessageBus } from '../message-bus';
 
 export interface Props {
+  bus: MessageBus;
 }
 
 export interface State {

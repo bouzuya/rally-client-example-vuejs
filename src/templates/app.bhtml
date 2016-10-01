@@ -3,5 +3,6 @@
   <my-header
     @v-on:switch-stamp-rally switchStampRally
   <my-body
+    @v-bind:bus bus
     @v-bind:stamp-rally-id stampRallyId
   <my-footer

@@ -8,6 +8,7 @@ import { StampRally } from '../types/stamp-rally';
 import { view as SpotView } from '../views/spot';
 import { view as StampRallyView } from '../views/stamp-rally';
 import { template } from '../views/templates/body';
+import { MessageBus } from '../message-bus';
 
 interface ApiSpot {
   id: number;
@@ -81,6 +82,7 @@ const getStampCard = (
 };
 
 export interface Props {
+  bus: MessageBus;
   stampRallyId: string;
 }
 

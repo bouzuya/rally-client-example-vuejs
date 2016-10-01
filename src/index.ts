@@ -1,9 +1,12 @@
 import * as Vue from 'vue';
 import { view as AppView } from './views/app';
+import { newMessageBus } from './message-bus';
 
 const main = (): void => {
+  const bus = newMessageBus();
   new Vue({
     el: '#app',
+    data: { bus },
     components: {
       'my-app': AppView
     }
